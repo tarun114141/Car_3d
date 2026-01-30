@@ -1,0 +1,118 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtsav8bo5fctm"]
+
+[ext_resource type="Script" uid="uid://gsgg127mt0k6" path="res://Scripts/settings.gd" id="1_x2hje"]
+
+[node name="SETTINGS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x2hje")
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 229.0
+
+[node name="Label4" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Anti Alasing"
+
+[node name="AA_options" type="OptionButton" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Shadow_retail" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Shadow Retail"
+
+[node name="S_R_options" type="OptionButton" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Texture_Detail" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Texture_Detail"
+
+[node name="T_D_options" type="OptionButton" parent="BoxContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Low"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
+popup/item_3/text = "Ultra"
+popup/item_3/id = 3
+
+[node name="Draw_Distance" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Draw_Distance"
+
+[node name="D_D_option" type="OptionButton" parent="BoxContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Near"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Far"
+popup/item_2/id = 2
+popup/item_3/text = "Ultra"
+popup/item_3/id = 3
+
+[node name="Fps_lock" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Fps_lock"
+
+[node name="FPS_option" type="OptionButton" parent="BoxContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "30"
+popup/item_0/id = 0
+popup/item_1/text = "60"
+popup/item_1/id = 1
+popup/item_2/text = "120"
+popup/item_2/id = 2
+popup/item_3/text = "unlimited"
+popup/item_3/id = 3
+
+[node name="Model_Detailing" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Model_Detailing"
+
+[node name="M_D_options" type="OptionButton" parent="BoxContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "LOW"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
+popup/item_3/text = "Ultra"
+popup/item_3/id = 3
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start
+"
+
+[connection signal="item_selected" from="BoxContainer/T_D_options" to="." method="_on_t_d_options_item_selected"]
+[connection signal="item_selected" from="BoxContainer/D_D_option" to="." method="_on_d_d_option_item_selected"]
+[connection signal="item_selected" from="BoxContainer/FPS_option" to="." method="_on_fps_option_item_selected"]
+[connection signal="item_selected" from="BoxContainer/M_D_options" to="." method="_on_m_d_options_item_selected"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

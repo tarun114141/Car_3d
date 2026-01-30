@@ -1,0 +1,30 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot editor and export/import folders
+.godot/
+.import/
+.export/
+
+# Export presets
+export_presets.cfg
+
+# Ignore generated import files and binary blobs
+*.import
+
+# Mono (C#) build artifacts
+/.mono/
+*.dll
+*.pdb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyo4sagsoicmb"]
+
+[ext_resource type="PackedScene" uid="uid://bn10i7xfv47ax" path="res://Car_assets/bmw_m4_modified_widebody_knitro_builds.glb" id="1_rocya"]
+
+[node name="car_3" instance=ExtResource("1_rocya")]

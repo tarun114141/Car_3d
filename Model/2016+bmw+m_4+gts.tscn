@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://jafma2ojtm6l"]
+
+[ext_resource type="PackedScene" uid="uid://bx0x60jfsb4dj" path="res://Model/2016+BMW+M4+GTS.glb" id="1_7yblh"]
+
+[node name="2016+BMW+M4+GTS" instance=ExtResource("1_7yblh")]

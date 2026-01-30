@@ -1,0 +1,132 @@
+[gd_scene load_steps=9 format=3 uid="uid://brtqqwf1dwvra"]
+
+[ext_resource type="Script" uid="uid://gxdqaqtectqm" path="res://Scripts/vehicle_wheel_3d.gd" id="1_ds4e5"]
+[ext_resource type="Script" uid="uid://c58k1jdvccw6y" path="res://Scripts/camera_pivot.gd" id="2_35dfu"]
+[ext_resource type="AudioStream" uid="uid://qwep7k3vjbs6" path="res://Sounds/engine.wav" id="3_tgmth"]
+[ext_resource type="PackedScene" uid="uid://bx0x60jfsb4dj" path="res://Model/2016+BMW+M4+GTS.glb" id="4_w4bh2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_35dfu"]
+rough = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_tgmth"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4bh2"]
+size = Vector3(1, 1.0402832, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4pfda"]
+height = 0.15
+
+[node name="VehicleWheel3D" type="VehicleBody3D"]
+mass = 1500.0
+physics_material_override = SubResource("PhysicsMaterial_35dfu")
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.2, 0)
+linear_damp_mode = 1
+linear_damp = 0.05
+angular_damp = 0.8
+script = ExtResource("1_ds4e5")
+max_brake = 320
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.3472922, 0, 0, 0, 0.59439546, 0, 0, 0, 2.768857, 0, 0, 0)
+mesh = SubResource("BoxMesh_tgmth")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.3472922, 0, 0, 0, 0.59439546, 0, 0, 0, 2.768857, 0, -0.011972085, 0)
+shape = SubResource("BoxShape3D_w4bh2")
+
+[node name="rear_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6929586, -0.3154099, -0.99523616)
+use_as_traction = true
+wheel_friction_slip = 1.5
+suspension_travel = 0.15
+suspension_stiffness = 50.0
+damping_compression = 1.5
+damping_relaxation = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rear_right"]
+transform = Transform3D(-4.2726686e-08, 1, -4.4337114e-08, 0, -4.371139e-08, -1.014315, -0.97747266, -4.371139e-08, 1.9380368e-15, -0.016547263, 0.021499097, 0.019850612)
+mesh = SubResource("CylinderMesh_4pfda")
+
+[node name="front_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68554735, -0.34564495, 0.9796401)
+use_as_steering = true
+wheel_friction_slip = 1.5
+suspension_travel = 0.15
+suspension_stiffness = 50.0
+damping_compression = 1.5
+damping_relaxation = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_right"]
+transform = Transform3D(-4.3711385e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -0.99999994, -4.371139e-08, 1.9106855e-15, -0.0035863519, 0.021499097, -0.03466952)
+mesh = SubResource("CylinderMesh_4pfda")
+
+[node name="front_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7734978, -0.34564495, 0.9782822)
+use_as_steering = true
+wheel_friction_slip = 1.5
+suspension_travel = 0.15
+suspension_stiffness = 50.0
+damping_compression = 1.5
+damping_relaxation = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_left"]
+transform = Transform3D(-4.3711385e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -0.99999994, -4.371139e-08, 1.9106855e-15, -0.16624218, 0.021499097, -0.019972086)
+mesh = SubResource("CylinderMesh_4pfda")
+
+[node name="rear_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7757766, -0.34564495, -1.0166051)
+use_as_traction = true
+wheel_friction_slip = 1.5
+suspension_travel = 0.15
+suspension_stiffness = 50.0
+damping_compression = 1.5
+damping_relaxation = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rear_left"]
+transform = Transform3D(-4.3711385e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -0.99999994, -4.371139e-08, 1.9106855e-15, 0.00096029043, 0.021499097, 0.017438889)
+mesh = SubResource("CylinderMesh_4pfda")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+script = ExtResource("2_35dfu")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(-0.99983835, -0.017104901, 0.005532115, -0.013257344, 0.9093922, 0.4157286, -0.01214186, 0.41558808, -0.9094719, -0.020356953, 1.899931, -2.581711)
+fov = 98.77623
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraPivot/Camera3D"]
+
+[node name="speed_label" type="Label" parent="CameraPivot/Camera3D/CanvasLayer"]
+offset_right = 99.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 50
+text = "speed"
+
+[node name="gear_label" type="Label" parent="CameraPivot/Camera3D/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "gear"
+
+[node name="timer" type="Label" parent="CameraPivot/Camera3D/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_right = 51.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+
+[node name="Engine_sfx" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_tgmth")
+autoplay = true
+bus = &"SFX"
+
+[node name="2016+BMW+M4+GTS" parent="." instance=ExtResource("4_w4bh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008971691, -0.544044, -0.052764297)

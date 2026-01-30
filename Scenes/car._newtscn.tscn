@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8el7lp8adw0q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hfqr7"]
+size = Vector3(1.85, 0.6, 3.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54yaq"]
+albedo_color = Color(0.27058825, 1, 1, 0.84313726)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlp34"]
+size = Vector3(1.8550415, 0.59558105, 3.4865417)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ulovt"]
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc48t"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Car" type="VehicleBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+mesh = SubResource("BoxMesh_hfqr7")
+surface_material_override/0 = SubResource("StandardMaterial3D_54yaq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013122559, 0.54022217, -0.018722534)
+shape = SubResource("BoxShape3D_tlp34")
+
+[node name="front_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0758634, 0, 1.7312587)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_left"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.007509947, 0, 0)
+mesh = SubResource("CylinderMesh_ulovt")
+surface_material_override/0 = SubResource("StandardMaterial3D_nc48t")
+
+[node name="front_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0508363, 0, 1.7312587)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_right"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.007509947, 0, 0)
+mesh = SubResource("CylinderMesh_ulovt")
+surface_material_override/0 = SubResource("StandardMaterial3D_nc48t")
+
+[node name="rear_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0508373, 0, -1.681302)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rear_right"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.007509947, 0, 0)
+mesh = SubResource("CylinderMesh_ulovt")
+surface_material_override/0 = SubResource("StandardMaterial3D_nc48t")
+
+[node name="rear_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0908785, 0, -1.7400842)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rear_left"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.007509947, 0, 0)
+mesh = SubResource("CylinderMesh_ulovt")
+surface_material_override/0 = SubResource("StandardMaterial3D_nc48t")

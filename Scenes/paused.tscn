@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpabvkp22lt3a"]
+
+[ext_resource type="Script" uid="uid://yahtlqbrpaoy" path="res://Scripts/paused.gd" id="1_fjnqb"]
+
+[node name="Paused" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0077349, 0.98483926)
+script = ExtResource("1_fjnqb")
+
+[node name="Sound" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 388.0
+offset_bottom = 321.0
+scale = Vector2(1.3599995, 1.5395979)
+
+[node name="Master_label" type="Label" parent="Sound"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Master" type="HSlider" parent="Sound"]
+layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+
+[node name="Music_label" type="Label" parent="Sound"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="Music" type="HSlider" parent="Sound"]
+layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+
+[node name="SFX_label" type="Label" parent="Sound"]
+layout_mode = 2
+text = "Sound effect volume"
+
+[node name="SFX" type="HSlider" parent="Sound"]
+layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+
+[node name="Resolution" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -335.31696
+offset_right = -40.316895
+offset_bottom = 95.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Resolution"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Choose Resolution
+"
+
+[node name="resolution" type="OptionButton" parent="Resolution"]
+layout_mode = 2
+
+[node name="graphics" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -335.25854
+offset_right = 194.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="graphics"]
+layout_mode = 2
+text = "Graphics"
+
+[node name="graphics" type="OptionButton" parent="graphics"]
+layout_mode = 2
+
+[node name="Apply" type="Button" parent="."]
+layout_mode = 0
+offset_left = 988.35516
+offset_top = 583.8516
+offset_right = 1040.3552
+offset_bottom = 614.8516
+text = "Apply
+"
+
+[node name="resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 87.324554
+offset_top = 611.2673
+offset_right = 157.32455
+offset_bottom = 642.2673
+text = "Resume
+"
+
+[connection signal="value_changed" from="Sound/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Sound/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Sound/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="item_selected" from="Resolution/resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="graphics/graphics" to="." method="_on_graphics_item_selected"]
+[connection signal="pressed" from="Apply" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
