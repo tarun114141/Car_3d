@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bpp7wii3asaq6"]
 
-[ext_resource type="PackedScene" uid="uid://brtqqwf1dwvra" path="res://car1.tscn" id="1_7822p"]
+[ext_resource type="PackedScene" uid="uid://brtqqwf1dwvra" path="res://Scenes/car1.tscn" id="1_7822p"]
 [ext_resource type="Script" uid="uid://d0h85pyypuoea" path="res://Scripts/manger.gd" id="1_uoj53"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7822p"]
@@ -77,7 +77,7 @@ transform = Transform3D(51.565598, 0, 0, 0, 1, 0, 0, 0, 385.2975, 0, -252.6582, 
 shape = SubResource("WorldBoundaryShape3D_k61xc")
 
 [node name="VehicleWheel3D" parent="." instance=ExtResource("1_7822p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2746277, 0, -2479.6548)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2746277, -4.722215, -2479.6548)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.62478924, 0, 0, 0, 1, 0, 0, 0, 13.433824, 0, -5.775186, -2129.7573)

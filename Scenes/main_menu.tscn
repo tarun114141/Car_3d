@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://deva6hpnmdcll"]
+
+[ext_resource type="Script" uid="uid://b15uxot8l2co" path="res://Scripts/main_menu.gd" id="1_28flt"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 71.0
+offset_right = 114.0
+offset_bottom = 142.0
+text = "Start
+"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_right = 89.0
+offset_bottom = 50.0
+text = "Settings
+"
+
+[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

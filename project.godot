@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="Caar"
-run/main_scene="uid://bpp7wii3asaq6"
+run/main_scene="uid://deva6hpnmdcll"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Settings="*res://settings.tscn"
 
 [input]
 

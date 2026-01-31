@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://brtqqwf1dwvra"]
 
-[ext_resource type="Script" uid="uid://gxdqaqtectqm" path="res://Scripts/vehicle_wheel_3d.gd" id="1_ds4e5"]
+[ext_resource type="Script" uid="uid://gxdqaqtectqm" path="res://Scripts/Car.gd" id="1_ds4e5"]
 [ext_resource type="Script" uid="uid://c58k1jdvccw6y" path="res://Scripts/camera_pivot.gd" id="2_35dfu"]
+[ext_resource type="PackedScene" uid="uid://5so3vmhjacb4" path="res://Scenes/paused_menu.tscn" id="3_pwl8o"]
 [ext_resource type="AudioStream" uid="uid://qwep7k3vjbs6" path="res://Sounds/engine.wav" id="3_tgmth"]
-[ext_resource type="PackedScene" uid="uid://bx0x60jfsb4dj" path="res://Model/2016+BMW+M4+GTS.glb" id="4_w4bh2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_35dfu"]
 rough = true
@@ -123,10 +123,14 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "00:00"
 
+[node name="PausedMenu" parent="CameraPivot/Camera3D/CanvasLayer" instance=ExtResource("3_pwl8o")]
+visible = true
+offset_left = 345.0
+offset_top = 373.0
+offset_right = 345.0
+offset_bottom = 373.0
+
 [node name="Engine_sfx" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_tgmth")
 autoplay = true
 bus = &"SFX"
-
-[node name="2016+BMW+M4+GTS" parent="." instance=ExtResource("4_w4bh2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008971691, -0.544044, -0.052764297)
