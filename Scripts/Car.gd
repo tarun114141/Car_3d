@@ -6,10 +6,10 @@ extends VehicleBody3D
 
 
 @export var max_brake=5000
-@onready var rear_left: VehicleWheel3D = $rear_left
-@onready var rear_right: VehicleWheel3D = $rear_right
-@onready var front_left: VehicleWheel3D = $front_left
-@onready var front_right: VehicleWheel3D = $front_right
+@onready var rear_left: VehicleWheel3D = $R_left
+@onready var rear_right: VehicleWheel3D = $R_right
+@onready var front_left: VehicleWheel3D = $F_left
+@onready var front_right: VehicleWheel3D = $F_right
 @onready var engine_sfx: AudioStreamPlayer3D = $Engine_sfx
 
 #Gear

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bpp7wii3asaq6"]
 
-[ext_resource type="PackedScene" uid="uid://brtqqwf1dwvra" path="res://Scenes/car1.tscn" id="1_7822p"]
 [ext_resource type="Script" uid="uid://d0h85pyypuoea" path="res://Scripts/manger.gd" id="1_uoj53"]
+[ext_resource type="PackedScene" uid="uid://b7d2y3kieqnri" path="res://Scenes/bugatti_car.tscn" id="2_go66d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7822p"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,9 +76,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 234.225, 0)
 transform = Transform3D(51.565598, 0, 0, 0, 1, 0, 0, 0, 385.2975, 0, -252.6582, 0)
 shape = SubResource("WorldBoundaryShape3D_k61xc")
 
-[node name="VehicleWheel3D" parent="." instance=ExtResource("1_7822p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2746277, -4.722215, -2479.6548)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.62478924, 0, 0, 0, 1, 0, 0, 0, 13.433824, 0, -5.775186, -2129.7573)
 size = Vector3(1, 0.87609863, 45.51947)
@@ -86,5 +83,8 @@ size = Vector3(1, 0.87609863, 45.51947)
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.62478924, 0, 0, 0, 1, 0, 0, 0, 13.433824, 10.487772, -5.690545, -2129.7573)
 size = Vector3(1, 0.87609863, 45.51947)
+
+[node name="Bugatti_car" parent="." instance=ExtResource("2_go66d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48963737, -5.8669405, -2479.7483)
 
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

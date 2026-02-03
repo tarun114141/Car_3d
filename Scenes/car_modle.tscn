@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3fo1c11giqxn"]
+
+[ext_resource type="PackedScene" uid="uid://bx0x60jfsb4dj" path="res://Model/2016+BMW+M4+GTS.glb" id="1_pgp2a"]
+
+[node name="Car_modle" instance=ExtResource("1_pgp2a")]
+
+[node name="Body" type="MeshInstance3D" parent="." index="81"]
+
+[node name="F-left" type="MeshInstance3D" parent="." index="82"]
+skeleton = NodePath("../Body")
+
+[node name="R-left" type="MeshInstance3D" parent="." index="83"]
+skeleton = NodePath("../Body")
+
+[node name="F-right" type="MeshInstance3D" parent="." index="84"]
+skeleton = NodePath("../Body")
+
+[node name="F-left2" type="MeshInstance3D" parent="." index="85"]
+skeleton = NodePath("../Body")
