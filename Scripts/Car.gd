@@ -1,5 +1,6 @@
 extends VehicleBody3D
 @export var MAX_STEER= 0.6
+@onready var smoke: CPUParticles3D = $CPUParticles3D
 
 
 @export var ENGINE_POWER= 3500
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 	var throttle = Input.get_action_strength("throttle") 
 	engine_sfx.pitch_scale = lerp(engine_sfx.pitch_scale, 0.6 + (speed_kmh / gears[current_gear]["max_speed"]) + (throttle * 0.2) if current_gear > 0 else 0.4 + throttle, 0.1)
-	
+	#smoke.initial_velocity_max=throttle* (speed_kmh/100)
 	
 	var gear_data = gears[current_gear]
 

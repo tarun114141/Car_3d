@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://5so3vmhjacb4"]
+[gd_scene format=3 uid="uid://5so3vmhjacb4"]
 
 [ext_resource type="Script" uid="uid://dkw3kiq3ebhxj" path="res://Scripts/paused_menu.gd" id="1_qxfps"]
+[ext_resource type="PackedScene" uid="uid://cr0ybwbhdqoum" path="res://Scenes/settings_menu.tscn" id="2_8da32"]
 
-[node name="PausedMenu" type="Control"]
+[node name="PausedMenu" type="Control" unique_id=400398028]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -12,11 +13,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qxfps")
 
-[node name="resume" type="Button" parent="."]
+[node name="resume" type="Button" parent="." unique_id=1679094567]
 layout_mode = 0
 offset_right = 181.0
 offset_bottom = 147.0
 text = "Resume
 "
 
+[node name="settings" type="Button" parent="." unique_id=475707460]
+layout_mode = 0
+offset_left = 221.0
+offset_top = -2.0
+offset_right = 408.0
+offset_bottom = 148.0
+text = "settings
+"
+
+[node name="SettingsMenu" parent="." unique_id=2110558343 instance=ExtResource("2_8da32")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 0.99200004
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 0.15185547
+offset_bottom = 0.18395996
+
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

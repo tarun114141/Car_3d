@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpp7wii3asaq6"]
+[gd_scene format=3 uid="uid://bpp7wii3asaq6"]
 
 [ext_resource type="Script" uid="uid://d0h85pyypuoea" path="res://Scripts/manger.gd" id="1_uoj53"]
 [ext_resource type="PackedScene" uid="uid://b7d2y3kieqnri" path="res://Scenes/bugatti_car.tscn" id="2_go66d"]
@@ -34,57 +34,57 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k61xc"]
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" unique_id=22197128]
 script = ExtResource("1_uoj53")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1080522606]
 environment = SubResource("Environment_k61xc")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.99679846, 0.03997768, -0.06924337, 0.029526928, 0.6207535, 0.7834495, 0.074303575, -0.7829858, 0.6175858, 0, 14.3927765, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1855461963]
+transform = Transform3D(0.99679846, 0.0399777, -0.069243364, 0.07814641, -0.30394793, 0.94947815, 0.016911557, -0.9518492, -0.30609903, 0, 14.3927765, 0)
 
-[node name="road" type="Node3D" parent="."]
+[node name="road" type="Node3D" parent="." unique_id=1028134319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.888829, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="road"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="road" unique_id=1430973348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12701225, 0, 0)
 mesh = SubResource("PlaneMesh_7822p")
 surface_material_override/0 = SubResource("StandardMaterial3D_7822p")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="road/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="road/MeshInstance3D" unique_id=998321186]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="road/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="road/MeshInstance3D/StaticBody3D" unique_id=453969191]
 shape = SubResource("ConcavePolygonShape3D_7822p")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="road"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="road" unique_id=1996458832]
 transform = Transform3D(-0.0075525837, 0, -31.489296, 0, 2.152079, 0, 0.53288275, 0, -0.44630006, -8.617327, 0.7868513, -2494.7222)
 mesh = SubResource("BoxMesh_7822p")
 
-[node name="ramp" type="MeshInstance3D" parent="road"]
+[node name="ramp" type="MeshInstance3D" parent="road" unique_id=2089586445]
 transform = Transform3D(5.0454454, -0.0032991096, 0.4107401, -0.076339304, 0.7849834, 1.5372006, -0.35241547, -0.21727368, 5.5474834, 0, 0.3626709, -2363.8618)
 mesh = SubResource("BoxMesh_uoj53")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="road/ramp"]
+[node name="StaticBody3D" type="StaticBody3D" parent="road/ramp" unique_id=156525806]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="road/ramp/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="road/ramp/StaticBody3D" unique_id=1047917496]
 shape = SubResource("ConcavePolygonShape3D_uoj53")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=114716066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 234.225, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=475063718]
 transform = Transform3D(51.565598, 0, 0, 0, 1, 0, 0, 0, 385.2975, 0, -252.6582, 0)
 shape = SubResource("WorldBoundaryShape3D_k61xc")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1362731578]
 transform = Transform3D(0.62478924, 0, 0, 0, 1, 0, 0, 0, 13.433824, 0, -5.775186, -2129.7573)
 size = Vector3(1, 0.87609863, 45.51947)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=785928616]
 transform = Transform3D(0.62478924, 0, 0, 0, 1, 0, 0, 0, 13.433824, 10.487772, -5.690545, -2129.7573)
 size = Vector3(1, 0.87609863, 45.51947)
 
-[node name="Bugatti_car" parent="." instance=ExtResource("2_go66d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48963737, -5.8669405, -2479.7483)
+[node name="Bugatti_car" parent="." unique_id=2101537934 instance=ExtResource("2_go66d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.630714, -5.4318433, -2448.8135)
 
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

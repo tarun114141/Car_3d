@@ -2,12 +2,18 @@ extends Control
 
 @onready var paused_menu: Control = $"."
 
+@onready var settings_menu: Control = $SettingsMenu
+
 
 @onready var resume_button: Button = $resume
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	settings_menu.visible=false
+	
+
+	
 	paused_menu.visible=false
 	pass
 	# Replace with function body.
@@ -45,3 +51,9 @@ func T_paused():
 
 func _on_resume_pressed() -> void:
 	resume() # Replace with function body.
+
+
+func _on_settings_pressed() -> void:
+	settings_menu.visible=true
+	print("setting is pressed")
+	

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr0ybwbhdqoum"]
+[gd_scene format=3 uid="uid://cr0ybwbhdqoum"]
 
 [ext_resource type="Script" uid="uid://2tltnwu3qwd2" path="res://Scenes/settings_menu.gd" id="1_icv2g"]
 
-[node name="SettingsMenu" type="Control"]
+[node name="SettingsMenu" type="Control" unique_id=1558184373]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,12 +11,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_icv2g")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=699390238]
 layout_mode = 0
 offset_right = 252.0
 offset_bottom = 203.0
 
-[node name="AA_options" type="OptionButton" parent="VBoxContainer"]
+[node name="AA_options" type="OptionButton" parent="VBoxContainer" unique_id=1544483659]
 layout_mode = 2
 item_count = 4
 popup/item_0/text = "OFF"
@@ -28,7 +28,7 @@ popup/item_2/id = 2
 popup/item_3/text = "MSAA_4X"
 popup/item_3/id = 3
 
-[node name="T_detail_options" type="OptionButton" parent="VBoxContainer"]
+[node name="T_detail_options" type="OptionButton" parent="VBoxContainer" unique_id=1706753888]
 layout_mode = 2
 item_count = 4
 popup/item_0/text = "LOW"
@@ -40,7 +40,7 @@ popup/item_2/id = 2
 popup/item_3/text = "Ultra"
 popup/item_3/id = 3
 
-[node name="D_D_options" type="OptionButton" parent="VBoxContainer"]
+[node name="D_D_options" type="OptionButton" parent="VBoxContainer" unique_id=509055729]
 layout_mode = 2
 item_count = 4
 popup/item_0/text = "Near"
@@ -52,7 +52,7 @@ popup/item_2/id = 2
 popup/item_3/text = "Ultra"
 popup/item_3/id = 3
 
-[node name="Fps" type="OptionButton" parent="VBoxContainer"]
+[node name="Fps" type="OptionButton" parent="VBoxContainer" unique_id=404103691]
 layout_mode = 2
 item_count = 4
 popup/item_0/text = "30"
@@ -64,14 +64,14 @@ popup/item_2/id = 2
 popup/item_3/text = "unlimited"
 popup/item_3/id = 3
 
-[node name="Resolution" type="OptionButton" parent="VBoxContainer"]
+[node name="Resolution" type="OptionButton" parent="VBoxContainer" unique_id=1528907242]
 layout_mode = 2
 item_count = 3
 popup/item_0/id = 0
 popup/item_1/id = 1
 popup/item_2/id = 2
 
-[node name="Model_detailing" type="OptionButton" parent="VBoxContainer"]
+[node name="Model_detailing" type="OptionButton" parent="VBoxContainer" unique_id=842546163]
 layout_mode = 2
 item_count = 4
 popup/item_0/text = "LOw"
@@ -83,7 +83,7 @@ popup/item_2/id = 2
 popup/item_3/text = "Ultra"
 popup/item_3/id = 3
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="Button" parent="." unique_id=369852808]
 layout_mode = 0
 offset_left = 899.0
 offset_top = 71.0
