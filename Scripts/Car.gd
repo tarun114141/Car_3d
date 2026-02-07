@@ -2,6 +2,9 @@ extends VehicleBody3D
 @export var MAX_STEER= 0.6
 @onready var smoke: CPUParticles3D = $CPUParticles3D
 
+@onready var reverse_camera: Camera3D = $SubViewport/reverse_camera
+@onready var reverse_screen: TextureRect = $TextureRect
+
 
 @export var ENGINE_POWER= 3500
 
@@ -48,16 +51,49 @@ var speed_limit
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	reverse_screen.visible=false
+	
 	time_passed=0.0
 	
 	 # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@export var drift_friction_limit := 2.5
+@export var normal_friction_slip := 10.5
+@export var drift_speed_threshold := 50.0 # km/h
+@export var drift_steering_threshold := 0.3
+
 func _physics_process(delta: float) -> void:
+	var offset=  Vector3(-transform.basis.z * 1.8 + transform.basis.y * 1.5 )  
+		 
+	reverse_camera.global_transform.origin = global_transform.origin + offset
+	reverse_camera.global_transform.basis=global_transform.basis
+	
+	if current_gear==-1:
+		reverse_screen.visible=true
+	else:
+		reverse_screen.visible=false
+		
+	
+	
+	
 	var speed_mps = linear_velocity.length()
 	var speed_kmh = speed_mps * 3.6
-	#var speed_kmh = linear_velocity.length() * 3.6
+	
+	# Detect drift intensity based on steering and speed
+	var steer_input = abs(Input.get_axis("right", "left"))
+	var drift_intensity = 0.0
+	
+	if speed_kmh > drift_speed_threshold and steer_input > drift_steering_threshold:
+		drift_intensity = (steer_input - drift_steering_threshold) / (1.0 - drift_steering_threshold)
+		drift_intensity *= clamp(speed_kmh / 200.0, 0.5, 1.5)
+	
+	# Apply dynamic friction slip to rear wheels
+	var target_friction = lerp(normal_friction_slip, drift_friction_limit, clamp(drift_intensity, 0.0, 1.0))
+	rear_left.wheel_friction_slip = lerp(rear_left.wheel_friction_slip, target_friction, delta * 5.0)
+	rear_right.wheel_friction_slip = lerp(rear_right.wheel_friction_slip, target_friction, delta * 5.0)
+
 	# Scales steering down from 100% at 0 km/h to about 15% at 250 km/h
 	var steer_amount = MAX_STEER * clamp(1.0 - (speed_kmh / 300.0), 0.15, 1.0)
 	steering = move_toward(steering, Input.get_axis("right", "left") * steer_amount, delta * 2.5)
@@ -128,6 +164,8 @@ func _physics_process(delta: float) -> void:
 		#print("yes")
 	#elif event.is_action_pressed("down_shift"):
 		#current_gear = max(current_gear- 1, -1)
+		
+	
 
 	
 	
@@ -150,6 +188,7 @@ func _input(event):
 			current_gear = max(current_gear - 1, -1)
 		else:
 			if Input.is_action_pressed("clutch"):
+				
 				current_gear=-1
 				print("yes")
 				
@@ -158,6 +197,7 @@ func format_time(t: float) -> String:
 	var minutes = int(t) / 60
 	var seconds = int(t) % 60
 	return "%02d:%02d" % [minutes, seconds]
+
 
 
 

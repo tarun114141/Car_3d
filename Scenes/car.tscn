@@ -16,7 +16,7 @@ sky = SubResource("Sky_uoj53")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_7822p"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_go66d"]
 size = Vector2(200, 5000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7822p"]
@@ -48,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.888829, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="road" unique_id=1430973348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12701225, 0, 0)
-mesh = SubResource("PlaneMesh_7822p")
+mesh = SubResource("PlaneMesh_go66d")
 surface_material_override/0 = SubResource("StandardMaterial3D_7822p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="road/MeshInstance3D" unique_id=998321186]
