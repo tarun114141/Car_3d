@@ -1,4 +1,6 @@
 extends VehicleBody3D
+
+var start = false
 @export var MAX_STEER= 0.6
 @onready var smoke: CPUParticles3D = $CPUParticles3D
 
@@ -99,6 +101,8 @@ func _physics_process(delta: float) -> void:
 	steering = move_toward(steering, Input.get_axis("right", "left") * steer_amount, delta * 2.5)
 	
 	var throttle = Input.get_action_strength("throttle") 
+	
+	#if start:
 	engine_sfx.pitch_scale = lerp(engine_sfx.pitch_scale, 0.6 + (speed_kmh / gears[current_gear]["max_speed"]) + (throttle * 0.2) if current_gear > 0 else 0.4 + throttle, 0.1)
 	#smoke.initial_velocity_max=throttle* (speed_kmh/100)
 	
