@@ -1,20 +1,26 @@
 [gd_scene format=3 uid="uid://b8g04dm6314m3"]
 
-[ext_resource type="PackedScene" uid="uid://b68r3gahig4aq" path="res://track_1.tscn" id="1_noarx"]
+[ext_resource type="PackedScene" uid="uid://eqov8kmbceve" path="res://track_1glb.glb" id="1_noarx"]
 [ext_resource type="PackedScene" uid="uid://b7d2y3kieqnri" path="res://Scenes/bugatti_car.tscn" id="2_a0tk4"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r3fl7"]
-backface_collision = true
+[sub_resource type="ArrayMesh" id="ArrayMesh_a0tk4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_noarx"]
 
 [node name="Node3D" type="Node3D" unique_id=324668417]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=731043318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62223685, 1.1920929e-07, 1.9594059)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1500289757]
 
-[node name="Car_track" parent="StaticBody3D" unique_id=395180821 instance=ExtResource("1_noarx")]
+[node name="track_1glb" parent="MeshInstance3D" unique_id=1492109829 instance=ExtResource("1_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.402359, 5.6308136, -28.665375)
+mesh = SubResource("ArrayMesh_a0tk4")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2127164729]
-shape = SubResource("ConcavePolygonShape3D_r3fl7")
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/track_1glb" unique_id=1134001071]
 
-[node name="Bugatti_car" parent="StaticBody3D" unique_id=1896071839 instance=ExtResource("2_a0tk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.878952)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/track_1glb/StaticBody3D" unique_id=1754399056]
+transform = Transform3D(1, 0, 0, 0, 1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_noarx")
+
+[node name="Bugatti_car" parent="." unique_id=1896071839 instance=ExtResource("2_a0tk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.242207, 7.0986977, 159.7073)
