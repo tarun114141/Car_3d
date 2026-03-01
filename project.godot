@@ -16,7 +16,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Caar"
 run/main_scene="uid://deva6hpnmdcll"
+<<<<<<< HEAD
 config/features=PackedStringArray("4.6", "Forward Plus")
+=======
+config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> ad2ab65 (not good)
 config/icon="res://icon.svg"
 
 [display]

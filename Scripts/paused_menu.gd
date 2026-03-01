@@ -20,7 +20,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+<<<<<<< HEAD
 func _process(delta: float) -> void:
+=======
+func _process(_delta: float) -> void:
+>>>>>>> ad2ab65 (not good)
 	T_paused()
 	pass
 	

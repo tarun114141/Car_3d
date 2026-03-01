@@ -2,7 +2,11 @@ extends VehicleBody3D
 
 var start = false
 @export var MAX_STEER= 0.6
+<<<<<<< HEAD
 @onready var smoke: CPUParticles3D = $CPUParticles3D
+=======
+#@onready var smoke: CPUParticles3D = $CPUParticles3D
+>>>>>>> ad2ab65 (not good)
 
 @onready var reverse_camera: Camera3D = $SubViewport/reverse_camera
 @onready var reverse_screen: TextureRect = $TextureRect
