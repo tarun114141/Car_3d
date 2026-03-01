@@ -39,5 +39,15 @@ offset_top = -5.0
 offset_right = 0.15185547
 offset_bottom = 0.18395996
 
+[node name="Button" type="Button" parent="." unique_id=686259375]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 230.0
+offset_right = 685.0
+offset_bottom = 238.0
+scale = Vector2(1.8095825, 2.152927)
+text = "exit "
+
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

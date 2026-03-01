@@ -3214,7 +3214,7 @@ skeleton = NodePath("")
 [node name="Node3D" type="Node3D" parent="Body" unique_id=460054900]
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Body/Node3D" unique_id=1175307321]
-transform = Transform3D(0.12158638, 0, 0.9977911, 0, 1, 0, -1.8262362, 0, 0.06643042, 0.5391364, 0.34643298, -2.4032328)
+transform = Transform3D(0.12158638, 0, 0.9977911, 0, 1, 0, -1.8262362, 0, 0.06643042, 0.31655324, 0.30091417, -2.4152553)
 amount = 125
 lifetime = 1.25
 draw_order = 2
@@ -3231,7 +3231,7 @@ color = Color(5.5407636e-05, 0.00023342072, 0.00019188868, 1)
 color_ramp = SubResource("Gradient_glrlv")
 
 [node name="CPUParticles3D2" type="CPUParticles3D" parent="Body/Node3D" unique_id=2111277596]
-transform = Transform3D(0.12158638, 0, 0.9977911, 0, 1, 0, -1.8262362, 0, 0.06643042, -0.34519243, 0.34643298, -2.4032328)
+transform = Transform3D(0.12158638, 0, 0.9977911, 0, 1, 0, -1.8262362, 0, 0.06643042, -0.31647712, 0.29797977, -2.4032328)
 amount = 125
 lifetime = 1.25
 draw_order = 2
@@ -3319,7 +3319,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9042517, 0.3342775, -1.4064082)
 use_as_traction = true
 wheel_radius = 0.34
-wheel_friction_slip = 1.5
+wheel_friction_slip = 1.0
 suspension_travel = 0.15
 suspension_stiffness = 70.0
 damping_compression = 1.5
@@ -3349,7 +3349,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.873482, 0.34344336, -1.4079494)
 use_as_traction = true
 wheel_radius = 0.34
-wheel_friction_slip = 1.5
+wheel_friction_slip = 1.0
 suspension_travel = 0.15
 suspension_stiffness = 70.0
 damping_compression = 1.5

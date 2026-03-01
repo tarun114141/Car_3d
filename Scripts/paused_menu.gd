@@ -57,3 +57,8 @@ func _on_settings_pressed() -> void:
 	settings_menu.visible=true
 	print("setting is pressed")
 	
+
+
+func _on_button_pressed() -> void:
+	get_tree().quit()
+	

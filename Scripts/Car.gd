@@ -153,6 +153,32 @@ func _physics_process(delta: float) -> void:
 	# Simulates engine compression slowing the car
 		rear_left.brake = 50.0 
 		rear_right.brake = 50.0
+		
+	# --- CONTROLLER VIBRATION SYSTEM ---
+	var joypads = Input.get_connected_joypads()
+
+	
+	var joy_id = 0
+
+	# Normalize speed (0 → 1)
+	var speed_factor = clamp(speed_kmh / 200.0, 0.0, 1.0)
+
+	# Throttle strength (0 → 1)
+	var throttle_strength = Input.get_action_strength("throttle")
+
+	# Final vibration intensity
+	var vibration_strength = speed_factor * throttle_strength
+
+	if vibration_strength > 0.05:
+		Input.start_joy_vibration(
+			joy_id,
+			vibration_strength * 0.4,   # weak motor
+			vibration_strength,         # strong motor
+			0.15
+		)
+	else:
+		Input.stop_joy_vibration(joy_id)
+
 	
 	
 	
