@@ -19,10 +19,6 @@ run/main_scene="uid://deva6hpnmdcll"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[display]
-
-window/size/mode=3
-
 [input]
 
 ui_accept={

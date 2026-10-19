@@ -18,7 +18,8 @@
 [ext_resource type="Script" uid="uid://c58k1jdvccw6y" path="res://Scripts/camera_pivot.gd" id="15_ruhfb"]
 [ext_resource type="Texture2D" uid="uid://bfpj5xnb27byt" path="res://Assets/particle_smoke.png" id="16_glrlv"]
 [ext_resource type="PackedScene" uid="uid://5so3vmhjacb4" path="res://Scenes/paused_menu.tscn" id="16_pc52q"]
-[ext_resource type="AudioStream" uid="uid://dx4ktde658oog" path="res://Sounds/engine.wav" id="18_ewf7v"]
+[ext_resource type="Script" uid="uid://dg0n6qkst1ia5" path="res://Scripts/First_canera.gd" id="18_ebie2"]
+[ext_resource type="AudioStream" uid="uid://qebl17y0tp3d" path="res://Sounds/engine.ogg" id="20_ebie2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1y7f"]
 resource_name = "Global_Texture_Carbon2_Diffuse"
@@ -3263,54 +3264,62 @@ use_as_steering = true
 wheel_radius = 0.34
 wheel_friction_slip = 1.5
 suspension_travel = 0.15
-suspension_stiffness = 70.0
+suspension_stiffness = 100.0
+suspension_max_force = 8000.0
 damping_compression = 1.5
 damping_relaxation = 2.0
 
-[node name="컴포넌트#35" type="MeshInstance3D" parent="F_left" unique_id=2113930400]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="F_left" unique_id=950012137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010343313, 0.0097904205)
+
+[node name="컴포넌트#35" type="MeshInstance3D" parent="F_left/MeshInstance3D" unique_id=2113930400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010821462, -0.2547127, 0.24671209)
 mesh = SubResource("ArrayMesh_lagir")
 skeleton = NodePath("")
 
-[node name="컴포넌트#27" type="MeshInstance3D" parent="F_left" unique_id=1620067745]
+[node name="컴포넌트#27" type="MeshInstance3D" parent="F_left/MeshInstance3D" unique_id=1620067745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21718454, -0.3287527, 0.32075202)
 mesh = SubResource("ArrayMesh_d3in3")
 skeleton = NodePath("")
 
-[node name="컴포넌트#31" type="MeshInstance3D" parent="F_left" unique_id=905378272]
+[node name="컴포넌트#31" type="MeshInstance3D" parent="F_left/MeshInstance3D" unique_id=905378272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2156645, -0.2594867, 0.25148618)
 mesh = SubResource("ArrayMesh_l2pva")
 skeleton = NodePath("")
 
-[node name="컴포넌트#39" type="MeshInstance3D" parent="F_left" unique_id=424107644]
+[node name="컴포넌트#39" type="MeshInstance3D" parent="F_left/MeshInstance3D" unique_id=424107644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031190515, -0.05666372, 0.056962848)
 mesh = SubResource("ArrayMesh_elx35")
 skeleton = NodePath("")
 
 [node name="F_right" type="VehicleWheel3D" parent="." unique_id=421664546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8812876, 0.33556512, 1.4054067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83516085, 0.33556512, 1.4054067)
 use_as_steering = true
 wheel_radius = 0.34
 wheel_friction_slip = 1.5
 suspension_travel = 0.15
-suspension_stiffness = 70.0
+suspension_stiffness = 100.0
+suspension_max_force = 8000.0
 
-[node name="컴포넌트#30" type="MeshInstance3D" parent="F_right" unique_id=1112592735]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="F_right" unique_id=1544630125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0742054, 0.027247488, -0.021360397)
+
+[node name="컴포넌트#30" type="MeshInstance3D" parent="F_right/MeshInstance3D" unique_id=1112592735]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.2569841, -0.2881883, -0.2505722)
 mesh = SubResource("ArrayMesh_0w470")
 skeleton = NodePath("")
 
-[node name="컴포넌트#26" type="MeshInstance3D" parent="F_right" unique_id=493044068]
+[node name="컴포넌트#26" type="MeshInstance3D" parent="F_right/MeshInstance3D" unique_id=493044068]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.25850403, -0.3574544, -0.31983805)
 mesh = SubResource("ArrayMesh_sgrfd")
 skeleton = NodePath("")
 
-[node name="컴포넌트#34" type="MeshInstance3D" parent="F_right" unique_id=314060654]
+[node name="컴포넌트#34" type="MeshInstance3D" parent="F_right/MeshInstance3D" unique_id=314060654]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.05214107, -0.28341433, -0.24579811)
 mesh = SubResource("ArrayMesh_8v2bn")
 skeleton = NodePath("")
 
-[node name="컴포넌트#38" type="MeshInstance3D" parent="F_right" unique_id=1454834794]
+[node name="컴포넌트#38" type="MeshInstance3D" parent="F_right/MeshInstance3D" unique_id=1454834794]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.07251012, -0.085365385, -0.05604911)
 mesh = SubResource("ArrayMesh_4s5mb")
 skeleton = NodePath("")
@@ -3321,26 +3330,30 @@ use_as_traction = true
 wheel_radius = 0.34
 wheel_friction_slip = 1.0
 suspension_travel = 0.15
-suspension_stiffness = 70.0
+suspension_stiffness = 100.0
+suspension_max_force = 8000.0
 damping_compression = 1.5
 damping_relaxation = 2.0
 
-[node name="컴포넌트#29" type="MeshInstance3D" parent="R_right" unique_id=876545365]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="R_right" unique_id=965203191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012486309, -0.010523796)
+
+[node name="컴포넌트#29" type="MeshInstance3D" parent="R_right/MeshInstance3D" unique_id=876545365]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.2625705, -0.3520641, -0.3307171)
 mesh = SubResource("ArrayMesh_ypq7h")
 skeleton = NodePath("")
 
-[node name="컴포넌트#33" type="MeshInstance3D" parent="R_right" unique_id=1950385441]
+[node name="컴포넌트#33" type="MeshInstance3D" parent="R_right/MeshInstance3D" unique_id=1950385441]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.26167357, -0.2928951, -0.2715478)
 mesh = SubResource("ArrayMesh_cq45o")
 skeleton = NodePath("")
 
-[node name="컴포넌트#37" type="MeshInstance3D" parent="R_right" unique_id=1481351096]
+[node name="컴포넌트#37" type="MeshInstance3D" parent="R_right/MeshInstance3D" unique_id=1481351096]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0333035, -0.2870041, -0.26565695)
 mesh = SubResource("ArrayMesh_wdhcv")
 skeleton = NodePath("")
 
-[node name="컴포넌트#41" type="MeshInstance3D" parent="R_right" unique_id=1071229841]
+[node name="컴포넌트#41" type="MeshInstance3D" parent="R_right/MeshInstance3D" unique_id=1071229841]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.05004251, -0.086838126, -0.06344986)
 mesh = SubResource("ArrayMesh_qkdk8")
 skeleton = NodePath("")
@@ -3351,26 +3364,30 @@ use_as_traction = true
 wheel_radius = 0.34
 wheel_friction_slip = 1.0
 suspension_travel = 0.15
-suspension_stiffness = 70.0
+suspension_stiffness = 100.0
+suspension_max_force = 8000.0
 damping_compression = 1.5
 damping_relaxation = 2.0
 
-[node name="컴포넌트#28" type="MeshInstance3D" parent="R_left" unique_id=1688575902]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="R_left" unique_id=294784819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01120162, 0)
+
+[node name="컴포넌트#28" type="MeshInstance3D" parent="R_left/MeshInstance3D" unique_id=1688575902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21844673, -0.35291478, 0.33751845)
 mesh = SubResource("ArrayMesh_u4dil")
 skeleton = NodePath("")
 
-[node name="컴포넌트#32" type="MeshInstance3D" parent="R_left" unique_id=1366155824]
+[node name="컴포넌트#32" type="MeshInstance3D" parent="R_left/MeshInstance3D" unique_id=1366155824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21754968, -0.2937458, 0.27834964)
 mesh = SubResource("ArrayMesh_t8v7c")
 skeleton = NodePath("")
 
-[node name="컴포넌트#36" type="MeshInstance3D" parent="R_left" unique_id=1345897009]
+[node name="컴포넌트#36" type="MeshInstance3D" parent="R_left/MeshInstance3D" unique_id=1345897009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01082027, -0.28785482, 0.27245855)
 mesh = SubResource("ArrayMesh_nectj")
 skeleton = NodePath("")
 
-[node name="컴포넌트#40" type="MeshInstance3D" parent="R_left" unique_id=1898980659]
+[node name="컴포넌트#40" type="MeshInstance3D" parent="R_left/MeshInstance3D" unique_id=1898980659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005918741, -0.087688774, 0.0702517)
 mesh = SubResource("ArrayMesh_72pal")
 skeleton = NodePath("")
@@ -3383,6 +3400,7 @@ camera = [NodePath("Camera3D"), NodePath("Camera3D2")]
 transform = Transform3D(-0.9998384, -0.017104905, 0.005532117, -0.012219956, 0.8723583, 0.48871428, -0.013185399, 0.48856765, -0.87242645, 0.015659034, 2.356255, -4.2416205)
 fov = 73.125
 near = 0.001
+script = ExtResource("18_ebie2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraPivot/Camera3D" unique_id=1442046602]
 
@@ -3431,7 +3449,7 @@ shape = SubResource("BoxShape3D_pc52q")
 
 [node name="Engine_sfx" type="AudioStreamPlayer3D" parent="." unique_id=1529679192]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60967743, 1.3113805)
-stream = ExtResource("18_ewf7v")
+stream = ExtResource("20_ebie2")
 autoplay = true
 bus = &"SFX"
 

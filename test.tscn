@@ -34,6 +34,10 @@ data = PackedVector3Array(-102.705696, 0, 51.792797, -106.590996, 0, 52.578197, 
 
 [node name="Node3D" type="Node3D" unique_id=173008057]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1765680054]
+transform = Transform3D(-0.80971277, -0.4201141, 0.4097187, 0.13987023, 0.53990465, 0.83002377, -0.5699136, 0.7293883, -0.37840623, 0, 62.739395, 0)
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=100932156]
 environment = SubResource("Environment_ppyta")
 
